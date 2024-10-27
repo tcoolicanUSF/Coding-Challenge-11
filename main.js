@@ -17,3 +17,11 @@ function updateTotalPrice () {
 productSelector.addEventListener('change', updateTotalPrice)
 quantityInput.addEventListener('input', updateTotalPrice)
 
+//Task 4: Handle Order Submission
+placeOrderButton.addEventListener('click', function() {
+    const selectedProduct = productSelector.options[productSelector.selectedIndex].text;
+    const quantity = quantityInput.value;
+    const totalPrice = totalPriceElement.textContent;
+
+    orderSummary.textContent = `Your order ${quantity} of ${selectedProduct}. Total Order: $${totalPrice}`;
+});
